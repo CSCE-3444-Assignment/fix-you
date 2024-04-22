@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BLADE - Swords and Axes</title>
+    <style>
+        /* Global Styles */
+        body {
+            background-color: #222;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Header Styles */
+        #header {
+            text-align: center;
+            padding: 20px;
+            background-color: #222;
+            color: #ffd700;
+            font-family: 'MedievalFont', cursive;
+            font-size: 36px;
+        }
+        
+        /* Body Styles */
+        #content {
+            padding: 20px;
+        }
+        
+        /* Silver Stars Script */
+        #stars {
+            position: fixed;
+            pointer-events: none;
+        }
+    </style>
+    <script>
+        // Silver Stars Script
+        document.addEventListener('mousemove', function(event) {
+            var stars = document.getElementById('stars');
+            var star = document.createElement('span');
+            star.innerHTML = '★';
+            star.style.position = 'absolute';
+            star.style.top = (event.clientY - 10) + 'px';
+            star.style.left = (event.clientX - 10) + 'px';
+            star.style.color = '#c0c0c0';
+            stars.appendChild(star);
+            setTimeout(function() {
+                star.remove();
+            }, 1000);
+        });
+    </script>
+</head>
+<body>
+    <div id="header">
+        BLADE
+    </div>
+    <div id="content">
+        <h1>Swords</h1>
+        <p>Discover our collection of high-quality swords, crafted with precision and designed for the ultimate warrior. From medieval longswords to elegant rapiers, we have the perfect weapon for every sword enthusiast.</p>
+        
+        <h1>Axes</h1>
+        <p>Explore our selection of powerful axes, built to withstand the toughest battles. Whether you're a Viking warrior or a modern-day lumberjack, our axes will deliver unmatched strength and durability.</p>
+    </div>
+    <div id="stars"></div>
+</body>
+</html>
